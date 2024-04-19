@@ -1,0 +1,42 @@
+@mixin display-flex-and-row {
+    display:flex;
+    flex-direction:row;
+}
+
+/****MERGING VALUES***/
+$center-value:center;
+
+$main-position: relative;
+$second-position: absolute;
+
+/********************************/
+
+.topbar,
+.topbar__ul,
+.presentation {
+    @include display-flex-and-row;
+}
+
+.topbar,
+.header-container {
+    justify-content:$center-value;
+}
+
+.topbar {
+    align-items:$center-value;
+}
+
+.header-container {
+    &__background {
+        position: $main-position;
+    }
+}
+
+.header-container__logo,
+.header-container__title {
+    position: $second-position;
+}
+
+.header-container {
+    display:flex;
+}

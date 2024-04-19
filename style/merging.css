@@ -1,0 +1,30 @@
+/****MERGING VALUES***/
+/********************************/
+.topbar,
+.topbar__ul,
+.presentation {
+  display: flex;
+  flex-direction: row;
+}
+
+.topbar,
+.header-container {
+  justify-content: center;
+}
+
+.topbar {
+  align-items: center;
+}
+
+.header-container__background {
+  position: relative;
+}
+
+.header-container__logo,
+.header-container__title {
+  position: absolute;
+}
+
+.header-container {
+  display: flex;
+}/*# sourceMappingURL=merging.css.map */
