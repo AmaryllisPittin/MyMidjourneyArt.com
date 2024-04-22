@@ -3,6 +3,11 @@
     flex-direction:row;
 }
 
+@mixin display-flex-and-column {
+    display:flex;
+    flex-direction:column;
+}
+
 /****MERGING VALUES***/
 $center-value:center;
 
@@ -13,17 +18,30 @@ $second-position: absolute;
 
 .topbar,
 .topbar__ul,
-.presentation {
+.presentation,
+.footer {
     @include display-flex-and-row;
 }
 
+.about,
+.gallery-text {
+    @include display-flex-and-column;
+}
+
 .topbar,
-.header-container {
+.header-container,
+.footer {
     justify-content:$center-value;
 }
 
-.topbar {
+.topbar,
+.about,
+.footer {
     align-items:$center-value;
+}
+
+.about {
+    text-align: justify;
 }
 
 .header-container {

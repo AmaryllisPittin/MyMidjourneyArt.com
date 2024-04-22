@@ -2,18 +2,32 @@
 /********************************/
 .topbar,
 .topbar__ul,
-.presentation {
+.presentation,
+.footer {
   display: flex;
   flex-direction: row;
 }
 
+.about,
+.gallery-text {
+  display: flex;
+  flex-direction: column;
+}
+
 .topbar,
-.header-container {
+.header-container,
+.footer {
   justify-content: center;
 }
 
-.topbar {
+.topbar,
+.about,
+.footer {
   align-items: center;
+}
+
+.about {
+  text-align: justify;
 }
 
 .header-container__background {
