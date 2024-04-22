@@ -1,3 +1,8 @@
+$tablet-breakpoint:1024px;
+$mobile-breakpoint:768px;
+
+/***********************************/
+
 @mixin display-flex-and-row {
     display:flex;
     flex-direction:row;
@@ -28,7 +33,6 @@ $second-position: absolute;
     @include display-flex-and-column;
 }
 
-.topbar,
 .header-container,
 .footer {
     justify-content:$center-value;
@@ -57,4 +61,62 @@ $second-position: absolute;
 
 .header-container {
     display:flex;
+}
+
+.topbar {
+    justify-content: space-between;
+}
+
+.topbar__ul {
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: $tablet-breakpoint) {
+    h1 {
+        font-size:25px;
+    }
+    .topbar {
+        @include display-flex-and-column;
+        align-items:center;
+        width:100%;
+        margin-left:0;
+        margin-right:0;
+        &__logo {
+            width:35%;
+            padding-left:2%;
+        }
+        &__ul {
+            justify-content: $center-value;
+        }
+    }
+    .header-container__logo {
+        width:25%;
+    }
+
+    .header-container__background {
+        height:400px;
+    }
+    .presentation {
+        padding-top:60px;
+    }
+    .presentation-img {
+        width: 230px;
+        height: 230px;
+        padding-right:7%;
+    }
+    .presentation-container__h2 {
+        font-size: 22px;
+        padding-top:0;
+        margin-top:0;
+    }
+    .presentation-container__p {
+        padding-bottom:12px;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+    .topbar__logo {
+        width:85%;
+    }
 }

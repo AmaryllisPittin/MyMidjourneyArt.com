@@ -6,7 +6,7 @@
 }
 
 .topbar a {
-  color: black;
+  color: rgb(20, 25, 64);
 }
 
 /********************************************************************************/
@@ -31,9 +31,9 @@ header {
 
 .topbar {
   padding-bottom: 20px;
-  width: 90%;
+  width: 88%;
   margin-right: 5%;
-  margin-left: 5%;
+  margin-left: 7%;
 }
 .topbar__logo {
   width: 25%;
@@ -47,13 +47,12 @@ header {
   min-width: 25%;
 }
 
-.topbar-li-end {
-  min-width: 25%;
-  padding-right: 0;
-}
-
 .topbar a {
   text-decoration: none;
+}
+
+.topbar a:hover {
+  color: rgb(53, 175, 236);
 }
 
 .header-container {
@@ -144,4 +143,11 @@ h1 {
   height: 200px;
   background: linear-gradient(50deg, rgb(20, 25, 64) 44%, rgb(53, 175, 236) 80%, rgb(22, 176, 218) 92%, rgb(10, 193, 230) 100%);
   color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .li-end {
+    min-width: 25%;
+    padding-right: 0;
+  }
 }/*# sourceMappingURL=mainStyle.css.map */

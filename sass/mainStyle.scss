@@ -1,3 +1,5 @@
+$tablet-breakpoint: 1024px;
+
 /**********COLORS VALUES****************/
 $main-color:white;
 $second-color: black;
@@ -10,7 +12,7 @@ $second-color: black;
 }
 
 .topbar a {
-    color: $second-color;
+    color: rgb(20,25,64);
 }
 
 /********************************************************************************/
@@ -36,9 +38,9 @@ header {
 
 .topbar {
     padding-bottom:20px;
-    width:90%;
+    width:88%;
     margin-right:5%;
-    margin-left:5%;
+    margin-left:7%;
     &__logo {
         width:25%;
     }
@@ -52,13 +54,12 @@ header {
     min-width:25%;
 }
 
-.topbar-li-end {
-    min-width: 25%;
-    padding-right:0;
-}
-
 .topbar a {
     text-decoration: none;
+}
+
+.topbar a:hover {
+    color: rgba(53,175,236,1);
 }
 
 .header-container {
@@ -149,4 +150,11 @@ h1 {
     height:200px;
     background: linear-gradient(50deg, rgba(20,25,64,1) 44%, rgba(53,175,236,1) 80%, rgba(22,176,218,1) 92%, rgba(10,193,230,1) 100%);
     color:white;
+}
+
+@media screen and (max-width: $tablet-breakpoint) {
+    .li-end {
+        min-width: 25%;
+        padding-right:0;
+    }
 }
