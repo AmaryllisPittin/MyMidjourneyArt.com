@@ -29,18 +29,30 @@ $second-position: absolute;
 }
 
 .about,
-.gallery-text {
+.gallery-text,
+.portfolio-main,
+.gallery-main {
     @include display-flex-and-column;
 }
 
+.cards-container {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-gap:30px;
+}
+
 .header-container,
-.footer {
+.footer,
+.article {
     justify-content:$center-value;
 }
 
 .topbar,
 .about,
-.footer {
+.footer,
+.portfolio-main,
+.article,
+.gallery-main {
     align-items:$center-value;
 }
 
@@ -59,7 +71,8 @@ $second-position: absolute;
     position: $second-position;
 }
 
-.header-container {
+.header-container,
+.article {
     display:flex;
 }
 

@@ -27,6 +27,14 @@ html {
     margin-right:5%;
 }
 
+body {
+    margin:0;
+}
+
+a {
+    text-decoration: none;
+}
+
 header {
     margin-bottom: 110px;
 }
@@ -58,12 +66,21 @@ header {
     text-decoration: none;
 }
 
-.topbar a:hover {
+.gallery-main a {
+    color: rgb(20,25,64);
+}
+
+.topbar a:hover,
+.gallery-main a:hover {
     color: rgba(53,175,236,1);
 }
 
 .header-container {
     width:100%;
+    height: 800px;
+    background: rgb(20,25,64);
+    background: linear-gradient(50deg, rgba(20,25,64,1) 44%, rgba(53,175,236,1) 80%, rgba(22,176,218,1) 92%, rgba(10,193,230,1) 100%);
+    
     &__background {
         width:85%;
         height: 700px;
@@ -150,6 +167,55 @@ h1 {
     height:200px;
     background: linear-gradient(50deg, rgba(20,25,64,1) 44%, rgba(53,175,236,1) 80%, rgba(22,176,218,1) 92%, rgba(10,193,230,1) 100%);
     color:white;
+}
+
+.cards-container {
+    width:80%;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:100px;
+}
+
+.portfolio-main h1,
+.gallery-main h1 {
+    background-image:linear-gradient(50deg, rgba(20,25,64,1) 44%, rgba(53,175,236,1) 80%, rgba(22,176,218,1) 92%, rgba(10,193,230,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.article {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius:20px;
+}
+
+.article h2 {
+    color: white;
+    font-size: 30px;
+}
+
+.article img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 20px;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.article:hover img {
+    filter: brightness(1);
+    transform: scale(1.1);
+}
+
+
+.footer-portfolio {
+    margin-top:100px;
 }
 
 @media screen and (max-width: $tablet-breakpoint) {

@@ -10,19 +10,31 @@
 }
 
 .about,
-.gallery-text {
+.gallery-text,
+.portfolio-main,
+.gallery-main {
   display: flex;
   flex-direction: column;
 }
 
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
 .header-container,
-.footer {
+.footer,
+.article {
   justify-content: center;
 }
 
 .topbar,
 .about,
-.footer {
+.footer,
+.portfolio-main,
+.article,
+.gallery-main {
   align-items: center;
 }
 
@@ -39,7 +51,8 @@
   position: absolute;
 }
 
-.header-container {
+.header-container,
+.article {
   display: flex;
 }
 
