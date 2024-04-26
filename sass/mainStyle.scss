@@ -21,11 +21,11 @@ $second-color: black;
     font-family: "Roboto", sans-serif;
 }
 
-html {
+/*html {
     width:90%;
     margin-left:5%;
     margin-right:5%;
-}
+}*/
 
 body {
     margin:0;
@@ -77,15 +77,9 @@ header {
 
 .header-container {
     width:100%;
-    height: 800px;
-    background: rgb(20,25,64);
-    background: linear-gradient(50deg, rgba(20,25,64,1) 44%, rgba(53,175,236,1) 80%, rgba(22,176,218,1) 92%, rgba(10,193,230,1) 100%);
     
     &__background {
         width:85%;
-        height: 700px;
-        margin-left:7.5%;
-        margin-right:7.5%;
     }
     &__logo {
         top:30%;
