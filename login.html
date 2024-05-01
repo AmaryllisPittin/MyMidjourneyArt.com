@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMidjourneyArt.com</title>
+    <link rel="stylesheet" href="style/login.css">
 </head>
 <body class="body-login">
     <article class="login">
         <h1>Auras-tu le bon profil et le bon mot de passe pour te connecter ?</h1>
         <p>Seule la développeuse peut se connecter ici afin d'apporter des modifications au site.</p>
         <form action="" method="post">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
+            <label for="mail">Email</label>
+            <input type="mail" name="mail" id="mail" required>
             <label for="password">Mot de passe</label>
             <input type="password" name="password" id="password" required>
-            <input type="submit" value="Valider"/>
+            <input type="submit" class="login-submit" value="Valider"/>
         </form>
+        <div class="error-message-container">
+                        
+        </div>
     </article>
 </body>
+<script src="js/login.js"></script>
 </html>

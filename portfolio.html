@@ -14,12 +14,14 @@
 <body>
     <header class="header">
         <topbar class="topbar">
-            <img class="topbar__logo" src="img/My-Midjourney-Art.png" alt="logo">
+            <img class="topbar__logo" src="img/logo2.png" alt="Personnal Midjourney Art logo">
+            <h1 class="topbar__h1">My Midjourney Art</h1>
             <ul class="topbar__ul">
                 <li class="topbar-li"><a href="index.html">Accueil</a></li>
                 <li class="topbar-li"><a href="#midjourney">Midjourney</a></li>
                 <li class="topbar-li"><a href="#about">A propos</a></li>
-                <li class="topbar-li li-end"><a href="portfolio.html">Portfolio</a></li>
+                <li class="topbar-li"><a href="portfolio.html">Portfolio</a></li>
+                <li class="topbar-li li-end"><a href="login.html">Connexion</a></li>
             </ul>
         </topbar>
     </header>
@@ -76,6 +78,22 @@
             </a>
         </div>
     </main>
+
+    <aside id="modal" class="portfolio-modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="title-modal">
+        <div class="modal-wrapper modal-gallery" id="modal-content">
+          <h3 id="title-modal">Galerie photo</h3>
+          <i class="fa-solid fa-x" id="js-close-modal-icon"></i>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button class="modal-btn-add" id="add-work-btn">
+              Ajouter une photo
+            </button>
+          </div>
+        </div>
+      </aside>
+
     <footer class="footer footer-portfolio">
         <p>Copyright 2024 - site développé par Amaryllis PITTIN</p>
     </footer>

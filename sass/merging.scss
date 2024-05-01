@@ -24,7 +24,8 @@ $second-position: absolute;
 .topbar,
 .topbar__ul,
 .presentation,
-.footer {
+.footer,
+.portfolio-modified {
     @include display-flex-and-row;
 }
 
@@ -35,7 +36,8 @@ $second-position: absolute;
     @include display-flex-and-column;
 }
 
-.cards-container {
+.cards-container,
+.cards-container-portfolio {
     display:grid;
     grid-template-columns:repeat(3, 1fr);
     grid-gap:30px;
@@ -108,6 +110,8 @@ $second-position: absolute;
 
     .header-container__background {
         height:400px;
+		width:100%;
+		background-color:red;
     }
     .presentation {
         padding-top:60px;
@@ -132,4 +136,123 @@ $second-position: absolute;
     .topbar__logo {
         width:85%;
     }
+}
+
+#modal {
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	box-sizing: border-box;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	display: none;	
+}
+
+.modal-wrapper,
+.modal-add-wrapper,
+.modal-gallery {
+	width:600px;
+	height:700px;
+	max-width: 100vh;
+	padding:30px;
+	background-color: white;
+	border-radius: 17px;
+	display:flex;
+	justify-content: center;
+	position:relative;
+	box-sizing: border-box;
+}
+
+.modal-wrapper h3,
+.modal-add-wrapper h3 {
+	font-size:22px;
+	width:100%;
+	position:absolute;
+	top:8%; 
+	left: 38%;
+}
+
+.modal-wrapper i,
+.modal-add-wrapper i {
+	position:absolute;
+	right:35px;
+	top:30px;
+	cursor: pointer;
+}
+
+.modal-add-wrapper .fa-arrow-left {
+	right:0;
+	left:35px;
+	font-size:1.5em;
+	width:3%;
+}
+
+.modal-body {
+	display:grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	flex-wrap:wrap;
+	position:absolute;
+	top:130px;
+	row-gap:30px;
+	column-gap:0px;
+	box-sizing: border-box;
+	width:90%;
+	margin-left:3%;
+}
+
+.modal-body img {
+	width:88%;
+}
+
+.modal-span-bin {
+	position: relative;
+	bottom:137px;
+	left:30px;
+}
+
+.fa-trash-can {
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	color:white;
+	background-color: black;
+	width:22px;
+	height:23px;
+	border-radius:4px;
+}
+
+.input-container .fa-image {
+	position:relative;
+	top:20px;
+	right:0;
+	font-size:80px;
+	color:#B9C5CC;
+}
+
+.modal-footer {
+	display:flex;
+	justify-content:center;
+	align-items:flex-end;
+	width:100%;
+	height:10%;
+	box-sizing: border-box;
+}
+
+.modal-btn,
+.modal-btn-add {
+	font-family:'Syne';
+	font-weight:700;
+	width: 38%;
+	height:7%;
+	border-radius: 60px;
+	cursor:pointer;
+	color: white;
+	background-color: #1D6154;
+	position:absolute;
+	bottom:40px;
 }

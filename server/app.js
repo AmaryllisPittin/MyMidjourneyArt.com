@@ -2,10 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
 
+app.use(cors());
 app.use(bodyParser.json());
 
 let categories = [
@@ -19,6 +21,13 @@ let categories = [
     {id: 8, description: 'Architecture' },
 ]
 
+let images = [
+    { categoryId: 1, url: '../img/Moise.webp' },
+    { categoryId: 2, url: '../img/Helice.webp' },
+    { categoryId: 3, url: '../img/CouteauCerf.webp' },
+];
+
+
 /********************************************************************************************** */
 const secretKey = crypto.randomBytes(32).toString('hex');
 
@@ -30,12 +39,10 @@ app.post('/login', (req, res) => {
 
         res.json({ success: true, token });
     } else {
-        // Informations de connexion invalides
         res.status(401).json({ success: false, message: 'Adresse email ou mot de passe incorrect.' });
     }
 });
 
-// Exemple de route protégée nécessitant une authentification
 app.get('/protected-route', (req, res) => {
     const token = req.headers.authorization;
 
@@ -44,12 +51,9 @@ app.get('/protected-route', (req, res) => {
     }
 
     try {
-        // Vérification et décryptage du token avec la clé secrète
         const decodedToken = jwt.verify(token, secretKey);
-        // L'utilisateur est authentifié
         res.json({ success: true, message: 'Ressource protégée accessible.' });
     } catch (error) {
-        // Erreur de validation du token
         res.status(401).json({ success: false, message: 'Token d\'authentification invalide.' });
     }
 });
@@ -59,11 +63,6 @@ app.listen(port, () => {
 });
 /********************************************************************************************** */
 
-/*app.get('/categories', (req, res) => {
-    const categoryReferences = categories.map(category => `/category/${category.id}`);
-    res.json(categoryReferences);
-});*/
-
 app.get('/category/:id', (req, res) => {
     const categoryId = parseInt(req.params.id);
     const category = categories.find(category => category.id === categoryId);
@@ -72,6 +71,17 @@ app.get('/category/:id', (req, res) => {
         res.json(category);
     } else {
         res.status(404).json({error: "catégorie non trouvée"});
+    }
+});
+
+app.get('/category/:id/images', (req, res) => {
+    const categoryId = parseInt(req.params.id);
+    const categoryImages = images.filter(image => image.categoryId === categoryId);
+
+    if (categoryImages.length > 0) {
+        res.json(categoryImages);
+    } else {
+        res.status(404).json({ error: "Aucune image trouvée pour cette catégorie" });
     }
 });
 
