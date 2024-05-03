@@ -10,25 +10,29 @@ function getImagesForCategory(categoryId) {
           return images.map(image => image.url);
       })
       .catch(error => {
-          console.error('Erreur lors de la récupération des images :', error);
           return [];
       });
 }
 
 function displayImagesForCategory(categoryId) {
-  getImagesForCategory(categoryId)
-      .then(imageUrls => {
-          const container = document.getElementById(`category-${categoryId}`);
-          imageUrls.forEach(url => {
-              const img = document.createElement('img');
-              img.classList.add('img');
-              img.src = url;
-              container.appendChild(img);
+  const container = document.getElementById(`category-${categoryId}`);
+  if(container) {
+      getImagesForCategory(categoryId)
+          .then(imageUrls => {
+              imageUrls.forEach(url => {
+                  const img = document.createElement('img');
+                  img.classList.add('img');
+                  img.src = url;
+                  container.appendChild(img);
+              });
           });
-      });
+  } else {
+      console.log(`Le conteneur pour la catégorie ${categoryId} n'existe pas sur cette page.`);
+  }
 }
 
-const categories = [1, 2, 3];
+
+let categories = [1, 2, 3, 4, 5, 6, 7, 8];
 categories.forEach(categoryId => {
   displayImagesForCategory(categoryId);
 });

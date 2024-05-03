@@ -234,4 +234,71 @@
   background-color: #1D6154;
   position: absolute;
   bottom: 40px;
+}
+
+/*****modal add images*****/
+.modal-add-body {
+  width: 90%;
+}
+
+.input-container {
+  background-color: #E8F1F6;
+  width: 70%;
+  height: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 110px;
+  right: 15%;
+}
+
+.input-container-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.insert-image-label {
+  margin-top: 30px;
+  background-color: #B9C5CC;
+  padding: 15px 35px 15px 35px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.input-container-flex p {
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+.form-container {
+  position: relative;
+  top: 300px;
+  left: 60px;
+  width: 86.5%;
+}
+
+.form-label {
+  padding-bottom: 15px;
+  padding-top: 25px;
+}
+
+.form-container form {
+  margin-top: 0;
+}
+
+.modal-btn-valid {
+  font-family: "Syne";
+  font-weight: 700;
+  width: 50%;
+  padding: 10px;
+  color: white;
+  background-color: #B9C5CC;
+  border: none;
+  border-radius: 60px;
+  position: absolute;
+  top: 240px;
+  left: 105px;
+  cursor: pointer;
 }/*# sourceMappingURL=merging.css.map */

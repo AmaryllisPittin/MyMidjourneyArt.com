@@ -25,6 +25,11 @@ let images = [
     { categoryId: 1, url: '../img/Moise.webp' },
     { categoryId: 2, url: '../img/Helice.webp' },
     { categoryId: 3, url: '../img/CouteauCerf.webp' },
+    { categoryId: 4, url: '../img/deco.webp' },
+    { categoryId: 5, url: '../img/steampunk.webp' },
+    { categoryId: 6, url: '../img/nature.webp' },
+    { categoryId: 7, url: '../img/portrait.webp' },
+    { categoryId: 8, url: '../img/architecture.webp' },
 ];
 
 
@@ -35,7 +40,7 @@ app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
     if (email === 'amaryllispittin@gmail.com' && password === 'PaddlE30') {
-        const token = jwt.sign({ email }, secretKey, { expiresIn: '1h' });
+        let token = jwt.sign({ email }, secretKey, { expiresIn: '1h' });
 
         res.json({ success: true, token });
     } else {
@@ -44,7 +49,7 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/protected-route', (req, res) => {
-    const token = req.headers.authorization;
+    let token = req.headers.authorization;
 
     if (!token) {
         return res.status(401).json({ success: false, message: 'Token d\'authentification manquant.' });
@@ -65,7 +70,7 @@ app.listen(port, () => {
 
 app.get('/category/:id', (req, res) => {
     const categoryId = parseInt(req.params.id);
-    const category = categories.find(category => category.id === categoryId);
+    let category = categories.find(category => category.id === categoryId);
 
     if (category) {
         res.json(category);
